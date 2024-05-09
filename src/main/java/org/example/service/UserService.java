@@ -1,6 +1,7 @@
 package org.example.service;
 
 import com.milktea.myspring.annotations.Autowired;
+import com.milktea.myspring.annotations.PostConstruct;
 import com.milktea.myspring.annotations.Service;
 import org.example.dto.UserInfoResponse;
 import org.example.dto.UserRegisterRequest;
@@ -26,5 +27,10 @@ public class UserService {
         User user = userRepository.getByUserId(userId);
         if (isDetailed) return new UserInfoResponse(user.getUserId(), user.getUsername(), user.getEmail(), user.getPassword(), user.getAge());
         else return new UserInfoResponse(user.getUserId(), user.getUsername());
+    }
+
+    @PostConstruct
+    public void setup() {
+        System.out.println("UserService 빈 생성 완료");
     }
 }

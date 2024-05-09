@@ -1,5 +1,6 @@
 package org.example.repository;
 
+import com.milktea.myspring.annotations.PostConstruct;
 import com.milktea.myspring.annotations.Repository;
 import org.example.entity.User;
 
@@ -22,5 +23,10 @@ public class UserRepository {
     public User getByUserId(Integer userId) {
         if (users.size() <= userId) return null;
         return users.get(userId);
+    }
+
+    @PostConstruct
+    public void setup() {
+        System.out.println("UserRepository 빈 생성 완료");
     }
 }

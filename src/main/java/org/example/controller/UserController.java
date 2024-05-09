@@ -25,4 +25,9 @@ public class UserController {
                                         @RequestParam(required = false, defaultValue="false") boolean isDetailed) {
         return userService.getUserInfo(user, isDetailed);
     }
+
+    @PostConstruct
+    public void setup() {
+        System.out.println("UserController 빈 생성 완료");
+    }
 }
