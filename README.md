@@ -44,7 +44,7 @@ Mini-SpringBoot JAR 파일이 의존성으로 추가되어 있어 Mini-SpringBoo
 ## 두 번째 사용자 자세한 정보 출력
 > **GET http://localhost:9090/user/1?isDetailed=true**
 
-### RequestBody
+### ResponseBody
 ```
 {
 "userId": 1,
